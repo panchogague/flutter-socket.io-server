@@ -15,9 +15,9 @@
 
       client.on("disconnect", () => console.log("Perdimos conexión"));
 
-      client.emit("message", { name: "Paco" });
-      client.on("message", (payload) => {
-        console.log(payload);
+      client.on("active-bands", (payload) => {
+        console.clear();
+        console.table(payload);
       });
     </script>
   </body>
